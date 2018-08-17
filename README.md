@@ -11,7 +11,7 @@ Date:   Tue Jul 31 03:10:27 2018 +0000
 We realized that without this patch, a remote attacker can easily test
 whether a certain user exists or not (username enumeration) on a target
 OpenSSH server:
-
+```c
   87 static int
   88 userauth_pubkey(struct ssh *ssh)
   89 {
@@ -24,7 +24,7 @@ OpenSSH server:
  106             (r = sshpkt_get_cstring(ssh, &pkalg, NULL)) != 0 ||
  107             (r = sshpkt_get_string(ssh, &pkblob, &blen)) != 0)
  108                 fatal("%s: parse request failed: %s", __func__, ssh_err(r));
-
+```
 The attacker can try to authenticate a user with a malformed packet (for
 example, a truncated packet), and:
 
