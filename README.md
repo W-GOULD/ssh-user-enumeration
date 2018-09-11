@@ -1,6 +1,3 @@
-# Important Notice
-
-Got some bugs with the code Im trying to sort out. Will update once fixed.
 
 # ssh-user-enumeration
 While reviewing the latest OpenSSH commits, we stumbled across:
