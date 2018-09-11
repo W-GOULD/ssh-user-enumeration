@@ -1,5 +1,10 @@
 
 # ssh-user-enumeration
+OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.	
+
+CVE: CVE-2018-15473
+#### Write up from https://www.openwall.com/lists/oss-security/2018/08/15/5
+
 While reviewing the latest OpenSSH commits, we stumbled across:
 
 https://github.com/openbsd/src/commit/779974d35b4859c07bc3cb8a12c74b43b0a7d1e0
