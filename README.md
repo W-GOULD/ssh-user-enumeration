@@ -1,13 +1,11 @@
 
 # ssh-user-enumeration
-OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.	
+
+OpenSSH through 7.7 is prone to a user enumeration vulnerability due to not delaying bailout for an invalid authenticating user until after the packet containing the request has been fully parsed, related to auth2-gss.c, auth2-hostbased.c, and auth2-pubkey.c.
 
 CVE: CVE-2018-15473
+
 #### Write up from https://www.openwall.com/lists/oss-security/2018/08/15/5
-
-While reviewing the latest OpenSSH commits, we stumbled across:
-
-https://github.com/openbsd/src/commit/779974d35b4859c07bc3cb8a12c74b43b0a7d1e0
 
 Date:   Tue Jul 31 03:10:27 2018 +0000
     delay bailout for invalid authenticating user until after the packet
@@ -40,3 +38,25 @@ example, a truncated packet), and:
 
 - if the user is valid (it exists), then sshpkt_get_u8() fails, and the
   server calls fatal() and closes its connection to the attacker.
+  
+
+## Updates
+
+The original code using Paramiko library has been updated to use the `ssh2-python` library for better compatibility and to avoid issues with Paramiko updates.
+
+## Dependencies
+
+Before running the updated code, you need to install the `ssh2-python` library:
+
+``` pip install ssh2-python ```
+
+## Usage
+
+(Include the usage instructions for the updated code here)
+
+## Disclaimer
+
+Please use this script responsibly and only on systems where you have permission to access. Unauthorized access to a system can lead to severe legal consequences.
+
+
+
