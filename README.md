@@ -52,7 +52,16 @@ Before running the updated code, you need to install the `ssh2-python` library:
 
 ## Usage
 
-(Include the usage instructions for the updated code here)
+``` usage: ssh-check-username.py [-h] [-t HOSTNAME] [-p PORT] [-u USERNAME] [-w WORDLIST]
+
+options:
+  -h, --help   show this help message and exit
+  -t HOSTNAME  Single target
+  -p PORT      port to connect on: Default port is 22
+  -u USERNAME  username you want to enumerate
+  -w WORDLIST  enumerate multiple users
+  ```
+
 
 ## Disclaimer
 
