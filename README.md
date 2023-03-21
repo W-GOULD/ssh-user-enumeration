@@ -52,7 +52,8 @@ Before running the updated code, you need to install the `ssh2-python` library:
 
 ## Usage
 
-``` usage: ssh-check-username.py [-h] [-t HOSTNAME] [-p PORT] [-u USERNAME] [-w WORDLIST]
+``` 
+usage: ssh-check-username.py [-h] [-t HOSTNAME] [-p PORT] [-u USERNAME] [-w WORDLIST]
 
 options:
   -h, --help   show this help message and exit
